@@ -89,7 +89,7 @@ void genpart(int canchas, Deporte &deporte) {
     }
 }
 
-int main() {
+int main2() {
     int n = 24; // Número de equipos
     int cns = 4, caG = 3; // Canchas y grupos
     cout << "Ingresa la cantidad de equipos o jugadores por deporte:" << endl;
