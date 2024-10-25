@@ -6,6 +6,7 @@ typedef pair<string,string> ss;
 // Definimos una estructura para manejar los deportes
 struct Deporte {
     string nombre;
+    int cns;
     vector<vector<ss>> partidos;
     vector<vector<string>> eqs;
     vector<string> nms;
@@ -61,7 +62,8 @@ void genpartg(int it, Deporte &deporte) {
 }
 
 // Función para generar los horarios para los partidos en diferentes canchas
-void genpart(int canchas, Deporte &deporte) {
+void genpart(Deporte &deporte) {
+	int canchas = deporte.cns;
     int cantidadPartidos = 0;
     vector<vector<ss>> partidosPorGrupo;
     deporte.partidos.resize(deporte.eqs.size());
@@ -89,19 +91,15 @@ void genpart(int canchas, Deporte &deporte) {
     }
 }
 
-int main2() {
-    int n = 24; // Número de equipos
-    int cns = 4, caG = 3; // Canchas y grupos
-    cout << "Ingresa la cantidad de equipos o jugadores por deporte:" << endl;
-    cin >> n;
-    cout << "Ingresa la cantidad de grupos por deporte:" << endl;
-    cin >> caG;
-    cout << "Ingresa la cantidad de canchas por deporte:" << endl;
-    cin >> cns;
+int main2(int numberTeams, int numberGroups, vector<int> fieldBySport) {
 
     vector<string> deportesNombres = {"Fútbol", "Básquetbol", "Voleibol", "Tenis"};
     for(int d = 0; d < 4; d++) {
+    	
+	    int n = numberTeams; // Número de equipos
+	    int caG = numberGroups; // Canchas y grupos
         deportes[d].nombre = deportesNombres[d];
+        deportes[d].cns = fieldBySport[d];
         cout << "Generando equipos y partidos para " << deportes[d].nombre << "..." << endl;
 
         // Agregamos los equipos
@@ -111,7 +109,7 @@ int main2() {
 
         // Generamos equipos y partidos
         geneq(caG, deportes[d]);
-        genpart(cns, deportes[d]);
+        genpart( deportes[d]);
 
         // Exportamos horarios
         ofstream aux(deportes[d].nombre + "_Horarios.csv");
