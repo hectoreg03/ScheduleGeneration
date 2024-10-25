@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include<iostream>
+#include "generateTournament.h"
 
 /* Global variables for the input fields */
 HWND hEditTeams, hEditSports;
@@ -119,6 +120,9 @@ void ClearPreviousCourtInputs() {
 void GenerateSchedules(HWND hwnd) {
     // Logic to generate schedules goes here
     // For now, just display a message box
+    std::vector<int> aux (4,2);
+    
+    //generarTorneo(24, 4, aux);
     MessageBox(hwnd, "Generando horarios...", "Información", MB_OK);
     
 }
