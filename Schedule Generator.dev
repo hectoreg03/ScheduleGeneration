@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;2;0;0;0
-UnitCount=5
+UnitCount=9
 
 [VersionInfo]
 Major=1
@@ -90,7 +90,7 @@ BuildCmd=
 CompileCpp=1
 
 [Unit6]
-FileName=main.cpp
+FileName=Tournament.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -104,6 +104,36 @@ FileName=Schedule Generator.dev
 Folder=
 Compile=0
 Link=0
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=Tournament.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=Sport.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=Sport.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
 Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
